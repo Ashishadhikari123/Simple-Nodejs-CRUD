@@ -1,6 +1,10 @@
+// Purpose: This file is used to connect to the MongoDB database.
+
+require('dotenv').config();
 
 const mongoose = require('mongoose');
-const mongooseURL = 'mongodb://localhost:27017/hotels';
+// const mongooseURL = 'mongodb://localhost:27017/hotels';
+ const mongooseURL = process.env.DB_URL;
 mongoose.connect(mongooseURL,{
     useNewUrlParser: true,
     useUnifiedTopology: true
